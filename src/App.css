@@ -65,3 +65,12 @@ h1{
   text-align: center;
   background-color: rgba(0,0,0,0.5);
 }
+.song-lyrics {
+  padding: 20px;
+  margin-top: 0px;
+  background-color: #faf2e8;
+  color: #555555;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

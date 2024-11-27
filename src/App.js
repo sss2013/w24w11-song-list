@@ -1,11 +1,33 @@
 import './App.css';
-import Container from './Container.js'
+import SongInfo from './SongInfo.js'
 
 const App = () => {
   const songs = [
-    'Dear..',
-    'Diver',
-    'Soul love',
+    {
+      id: 1,
+      title: "Glacial love",
+      singer: "Siam Shade",
+      rating: 5,
+      lyrics:`Ah こんなにも愛してる人なのに
+      Break 時と共に傷付けて行くだけで
+      何もしてあげられない
+      この想い上手く言葉に出来ずに 曇る君の瞳の中
+      思わず漏れた溜息 すれ違う二人の心にこだまする`,
+    },
+    {
+      id: 2,
+      title: "Diver",
+      singer: "Nico touches the walls",
+      rating: 3,
+      lyrics: null,
+    },
+    {
+      id: 3,
+      title: "HOWEVER",
+      singer: "Glay",
+      rating: 3,
+      lyrics: null,
+    },
   ]
 
   return (
@@ -29,9 +51,9 @@ const Playlist = props => {
     <div className='playlist'>
       <div className='playlist'>{props.title}</div>
       {
-        props.listSong.map((song,index)=> (
-          <Container key={index} title={song} index={index}/>
-        ))
+        props.listSong.map(song => 
+          <SongInfo key={song.id} song={song}/>
+        )
       }
     </div>
   )
