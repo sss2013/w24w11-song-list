@@ -4,22 +4,34 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Playlist/>
+      <Container/>
     </div>
   );
+}
+
+function Playlist() {
+  return (
+    <div className="playlist">프로그래밍하면서 듣고 싶은 노래</div>
+  )
+}
+
+function Header(){
+  return (
+    <h1>React 프론트엔드 프로그래밍</h1>
+  )
+}
+
+function Container(){
+  return(
+    <div className="container">
+      <a href="https://www.youtube.com/results?search_query=Dear..">
+        <img src="https://picsum.photos/600/150?random=1" alt="랜덤 이미지1"></img>
+        <div className="song-title">Dear..</div>
+      </a>
+    </div>
+  )
 }
 
 export default App;

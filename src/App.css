@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +32,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+.container {
+  position: relative;
+}
+
+a {
+  color: white;
+}
+img {
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  margin: 0px;
+  padding: 30px;
+  background-color: #A8D1D1;
+}
+
+.playlist{
+  padding:20px;
+  margin-bottom:16px;
+  background-color: #FD8A8A;
+}
+
+.song-title{
+  position:absolute;
+  width: 100%;
+  bottom: 5px;
+  padding: 16px 0px;
+  text-align: center;
+  background-color: rgba(255,255,255,0);
 }
