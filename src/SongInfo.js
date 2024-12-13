@@ -13,7 +13,7 @@ const SongInfo = (props) => {
         <img src={`https://picsum.photos/600/150?random=${props.song.id}`} alt={`랜덤 이미지${props.song.id}`}
           onClick= {toggleLyrics}></img>
         <a href={`https://www.youtube.com/results?search_query=${props.song.title}`} target = '_blank'
-          rel='noreferer'>
+          rel='noreferrer'>
           
         <div className="song-title">
           {`${props.song.title} (${props.song.singer})`}</div>
@@ -37,4 +37,4 @@ const SongInfo = (props) => {
     )
   }
 
-  export default SongInfo
+export default SongInfo

@@ -1,34 +1,30 @@
 import './App.css';
 import SongInfo from './SongInfo.js'
+import {useState,useEffect} from 'react'
+import axios from 'axios'
+
+const SERVER_URL='http://localhost:8080/api/songs'
 
 const App = () => {
-  const songs = [
-    {
-      id: 1,
-      title: "Glacial love",
-      singer: "Siam Shade",
-      rating: 5,
-      lyrics:`Ah こんなにも愛してる人なのに
-      Break 時と共に傷付けて行くだけで
-      何もしてあげられない
-      この想い上手く言葉に出来ずに 曇る君の瞳の中
-      思わず漏れた溜息 すれ違う二人の心にこだまする`,
-    },
-    {
-      id: 2,
-      title: "Diver",
-      singer: "Nico touches the walls",
-      rating: 3,
-      lyrics: null,
-    },
-    {
-      id: 3,
-      title: "HOWEVER",
-      singer: "Glay",
-      rating: 3,
-      lyrics: null,
-    },
-  ]
+  const [songs,setSongs]=useState([])
+
+  const getSong = async () => {
+    try{
+      const res = await axios.get(SERVER_URL)
+      console.log(res)
+
+      setSongs(res.data)
+    } catch (err){
+      console.log(err)
+
+      setSongs([])
+    }
+  }
+
+  useEffect(() => {
+    getSong() 
+  } ,[])
+
 
   return (
     <div>
@@ -46,18 +42,17 @@ function Header() {
   )
 }
 
-const Playlist = props => {
+const Playlist = ({title,listSong}) => {
   return (
     <div className='playlist'>
-      <div className='playlist'>{props.title}</div>
+      <div className='playlist'>{title}</div>
       {
         props.listSong.map(song => 
           <SongInfo key={song.id} song={song}/>
-        )
+        ) 
       }
     </div>
   )
 }
-
 
 export default App;
